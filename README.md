@@ -116,8 +116,8 @@ Pulled from the "Open Questions" sections across all docs, in one place:
 | **engineering** | ✅ `architecture.md`, `security-architecture.md`, `entitlement-role-sync-policy.md` |
 | **design** | ✅ Brand kit + two console UI mockups |
 | **marketing** | 🟡 Landing page started, `main.js` missing |
+| **support** | ✅ `support-operations.md`, `support_triage` pipeline wired and tested |
 | **sales** | ⛔ Empty |
-| **support** | ⛔ Empty |
 | **ops** | ⛔ Empty |
 | **finance** | ⛔ Empty |
 | **legal** | ⛔ Empty |

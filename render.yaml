@@ -1,0 +1,45 @@
+# render.yaml — Blueprint for deploying connector-auth-service to Render.
+#
+# Usage: connect this repo in the Render dashboard as a "Blueprint" and it
+# will read this file automatically, OR create the Web Service manually
+# using these same settings.
+#
+# IMPORTANT — after first deploy:
+# 1. Render will assign a URL like https://jimjamest-connector-auth.onrender.com
+# 2. Set BASE_URL below to that exact URL (see envVars)
+# 3. Update the redirect URI registered in EACH provider's OAuth app config
+#    (Google Cloud Console, Spotify Developer Dashboard, LinkedIn Developer
+#    Portal) to match — e.g. https://jimjamest-connector-auth.onrender.com/connect/google/callback
+#    Mismatched redirect URIs are the most common OAuth deploy failure.
+
+services:
+  - type: web
+    name: jimjamest-connector-auth
+    runtime: python
+    plan: starter
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /connect/status
+    envVars:
+      # Set manually in the Render dashboard after first deploy — see note above.
+      # Not synced from this file since it depends on Render's assigned URL.
+      - key: BASE_URL
+        sync: false
+
+      # OAuth credentials — set these in the Render dashboard's Environment tab.
+      # sync: false means Render won't try to source them from this file or
+      # a linked env group automatically; they must be entered manually so
+      # real secrets never get committed to the repo.
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: SPOTIFY_CLIENT_ID
+        sync: false
+      - key: SPOTIFY_CLIENT_SECRET
+        sync: false
+      - key: LINKEDIN_CLIENT_ID
+        sync: false
+      - key: LINKEDIN_CLIENT_SECRET
+        sync: false

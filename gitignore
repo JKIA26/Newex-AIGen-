@@ -1,0 +1,122 @@
+# =====================
+# OS / Editor
+# =====================
+.DS_Store
+Thumbs.db
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+.idea/
+
+# =====================
+# Node / TS
+# =====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+dist/
+build/
+out/
+
+.cache/
+.next/
+.nuxt/
+.svelte-kit/
+
+.vercel/
+.vercel-cache/
+
+coverage/
+*.tsbuildinfo
+
+# =====================
+# Python (if you use it for agent schemas / tooling)
+# =====================
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+.venv/
+venv/
+ENV/
+env/
+
+# =====================
+# Env / Secrets
+# =====================
+.env
+.env.*
+!.env.example
+
+# =====================
+# Logs / Traces (Langfuse/Braintrust-like)
+# =====================
+logs/
+log/
+*.log
+trace/
+traces/
+tmp/
+temp/
+
+# =====================
+# Runtime / Uploads / Caches
+# =====================
+uploads/
+data/
+storage/
+persistent/
+storage*/
+cache/
+caches/
+
+# Common sandbox directories (Modal / sandboxes / snapshots)
+.snapshots/
+sandbox/
+sandboxes/
+workspace/
+
+# =====================
+# Agent / Pipeline artifacts
+# =====================
+*.jsonl
+*.lock
+*.db
+*.sqlite
+*.sqlite3
+
+# If you generate indexed/RAG artifacts locally
+index/
+indexes/
+embeddings/
+vectorstore/
+chroma/
+faiss/
+
+# =====================
+# Keys / credentials (be extra safe)
+# =====================
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+
+# =====================
+# Misc
+# =====================
+*.tgz
+*.gz
+*.zip
+*.rar

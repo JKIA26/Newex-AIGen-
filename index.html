@@ -1,0 +1,162 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>JIMJAM'EST — AI Agents That Run Real Business Workflows</title>
+
+    <!-- Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome 6.5.2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- NOTE: video background removed — was pointing at a third-party demo asset.
+         .bg now renders an animated gradient + node motif instead (matches the
+         "Event-Driven Backbone" visual motif from the brand identity board).
+         Swap .bg-video back in once you have a licensed/owned video asset. -->
+    <div class="bg" aria-hidden="true">
+      <div class="bg-gradient"></div>
+      <svg class="bg-motif" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <path d="M0,400 C200,300 300,500 500,400 S800,300 1000,420 S1200,380 1200,380" stroke="#2D6B57" stroke-width="1.5" fill="none" opacity="0.35"/>
+        <path d="M0,500 C250,420 350,560 550,480 S850,420 1100,520" stroke="#7C6BA8" stroke-width="1.5" fill="none" opacity="0.3"/>
+        <circle cx="500" cy="400" r="4" fill="#2D6B57"/>
+        <circle cx="850" cy="420" r="4" fill="#7C6BA8"/>
+        <circle cx="1100" cy="520" r="3" fill="#2D6B57"/>
+      </svg>
+    </div>
+
+    <div class="page">
+      <!-- Header -->
+      <header class="header anim" data-anim-delay="0.05s">
+        <div class="header-inner">
+          <!-- Logo -->
+          <a class="logo-btn" href="#" aria-label="Home">
+            <span class="logo-mark">J</span>
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="nav-pill" aria-label="Primary navigation">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Product</a>
+            <a class="nav-link" href="#">Case Studies</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav>
+
+          <!-- Desktop Sign In -->
+          <a class="signin-pill" href="#">Sign in</a>
+
+          <!-- Mobile Burger -->
+          <button
+            class="burger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span class="burger-bars" aria-hidden="true"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <div class="overlay" id="overlay" hidden></div>
+
+      <div id="mobileMenu" class="mobile-menu" hidden>
+        <a class="m-link active" href="#" data-link>Home</a>
+        <a class="m-link" href="#" data-link>Product</a>
+        <a class="m-link" href="#" data-link>Case Studies</a>
+        <a class="m-link" href="#" data-link>Contact</a>
+        <a class="m-signin" href="#" data-link>Sign in</a>
+        <div class="m-active-indicator" aria-hidden="true"></div>
+      </div>
+
+      <!-- Hero -->
+      <main class="hero" aria-label="Hero content">
+        <div class="hero-inner">
+          <!-- Trust row -->
+          <div class="trust-row anim" style="--d: 0.05s">
+            <div class="trust-avatars" aria-hidden="true">
+              <div class="avatar a1"><i class="fa-solid fa-code"></i></div>
+              <div class="avatar a2"><i class="fa-solid fa-headset"></i></div>
+              <div class="avatar a3"><i class="fa-solid fa-chart-line"></i></div>
+            </div>
+            <div class="trust-pill">
+              Built for Ops, Support &amp; Sales teams
+            </div>
+          </div>
+
+          <!-- Headline -->
+          <div class="headline anim" style="--d: 0.12s">
+            <span class="headline-line" style="--d: 0.12s">Agents that</span>
+            <span class="headline-line" style="--d: 0.3s">finish real work.</span>
+          </div>
+
+          <!-- Subhead -->
+          <p class="subhead anim" style="--d: 0.28s">
+            AI agents that run real business workflows.<br />
+            Built by developers, for the teams doing the work.
+          </p>
+
+          <!-- CTA -->
+          <div class="cta-wrap anim" style="--d: 0.4s">
+            <a class="cta" href="#">Run your first agent</a>
+          </div>
+        </div>
+      </main>
+
+      <!-- Stats footer -->
+      <footer class="stats" aria-label="Key stats">
+        <div class="stats-grid">
+          <div class="stat anim" style="--d: 0.5s">
+            <div class="stat-icon">&lt;</div>
+            <div class="stat-value" data-count data-target="480" data-suffix="ms" data-decimals="0" data-duration="1500" data-start="480">
+              0
+            </div>
+            <div class="stat-label">Avg. agent step time</div>
+          </div>
+
+          <div class="stat anim" style="--d: 0.58s">
+            <div class="stat-icon">%</div>
+            <div class="stat-value" data-count data-target="99.99" data-suffix="%" data-decimals="2" data-duration="1660" data-start="570">
+              0
+            </div>
+            <div class="stat-label">Platform uptime</div>
+          </div>
+
+          <div class="stat anim" style="--d: 0.66s">
+            <div class="stat-icon">*</div>
+            <div class="stat-value" data-count data-target="24" data-suffix="/7" data-decimals="0" data-duration="1820" data-start="660">
+              0
+            </div>
+            <div class="stat-label">Event-driven, always on</div>
+          </div>
+
+          <div class="stat anim" style="--d: 0.74s">
+            <div class="stat-icon">#</div>
+            <div class="stat-value" data-count data-target="3" data-suffix="" data-decimals="0" data-duration="1200" data-start="750">
+              0
+            </div>
+            <div class="stat-label">Launch workflows: Ops, Support, Sales</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
